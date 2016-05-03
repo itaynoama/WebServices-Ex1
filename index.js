@@ -16,7 +16,7 @@ app.use('/assets', express.static(__dirname + 'public'));
 //Manager - new College
 var college = new College();
 
-
+//HomePage
 app.get('/', function(request,response) {
       response.send('<!doctype html><html><head></head><body style="background:#e5e5e5; text-align:center;"><h1 style="color:red" >Welcome - Shenkar Students Grades</h1></body></html>');
 });
@@ -25,7 +25,6 @@ app.get('/', function(request,response) {
 //All the request 
 app.all('*', function(request,response,next) {
     request.next();
-    
 });
 
 
