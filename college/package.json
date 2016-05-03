@@ -1,0 +1,11 @@
+{
+  "name": "grades",
+  "version": "1.0.0",
+  "description": "students grades web service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ITAY NOAMA",
+  "license": "ISC"
+}
