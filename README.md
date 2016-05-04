@@ -14,3 +14,7 @@
 4. Write the command - 'node index.js'
 5. Now you need to use the routs below, have fun.
 
+### Obtaining All The Excellent Students 
+   * In order to obtain all the excellent students you need to add the following link:                
+  -> http://localhost:3000/allexcellentstudents        
+  -> 
