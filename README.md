@@ -35,7 +35,7 @@
    * In order to obtain students by a certain year you need to add the following link:             
   -> 'http://localhost:3000/studentyear/[year]'          
   -> 'https://itaycollege.herokuapp.com/studentyear/[year]'         
-   * Change the [year] with one of this years - {2005, 2009, 2010, 2015, 2016}
+  * Change the [year] with one of this years - {2005, 2009, 2010, 2015, 2016}
 
 ###### The JSON response 
 [{"studentName":"Itay Noa","ID":6,"Year":"2016","grade":"100"}]
