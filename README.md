@@ -21,8 +21,8 @@
 
 ###### The JSON response 
     [
-      {"studentName":"Yaniv Shal","ID":2,"Year":"2005","grade":"90"}
-      ,{"studentName":"shalev Bil","ID":3,"Year":"2009","grade":"85"},
+      {"studentName":"Yaniv Shal","ID":2,"Year":"2005","grade":"90"},
+      {"studentName":"shalev Bil","ID":3,"Year":"2009","grade":"85"},
       {"studentName":"Itay Noa","ID":6,"Year":"2016","grade":"100"}
     ]
 
@@ -33,7 +33,7 @@
   * Change the [id] with number between 1-6
 
 ###### The JSON response 
-{"studentName":"Israel Cohen","ID":1,"Year":"2015","grade":"80"}
+    {"studentName":"Israel Cohen","ID":1,"Year":"2015","grade":"80"}
 
 ### Obtaining Students By Year
    * In order to obtain students by a certain year you need to add the following link:             
@@ -42,4 +42,4 @@
   * Change the [year] with one of this years - {2005, 2009, 2010, 2015, 2016}
 
 ###### The JSON response 
-[{"studentName":"Itay Noa","ID":6,"Year":"2016","grade":"100"}]
+    [{"studentName":"Itay Noa","ID":6,"Year":"2016","grade":"100"}]
