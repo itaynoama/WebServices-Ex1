@@ -1,7 +1,7 @@
 module.exports = {
     events : {
         AllExcellentStudents : 'getAllExcellentStudents',
-        StudentById : 'getExcellentStudentByID',
-        ExellentStudentByYear : 'getAllExcellentStudentsByYear'
+        StudentById : 'getStudentByID',
+        ExellentStudentByYear : 'getAllStudentsByYear'
     }
 }

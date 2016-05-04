@@ -18,7 +18,7 @@ var college = new College();
 
 //HomePage
 app.get('/', function(request,response) {
-      response.send('<!doctype html><html><head></head><body style="background:#e5e5e5; text-align:center;"><h1 style="color:red" >Welcome - Shenkar Students Grades</h1></body></html>');
+      response.send('<!doctype html><html><head></head><body style="background:#e5e5e5; text-align:center;"><h1 style="color:red" >Welcome - Shenkar Excellent Students</h1></body></html>');
 });
 
 
@@ -37,14 +37,14 @@ app.get('/allexcellentstudents', function(request,response){
 //Get specific student by ID
 app.get('/student/:ID', function(request,response){
     var ID = request.params.ID;
-    response.send(college.getExcellentStudentByID(ID));
+    response.send(college.getStudentByID(ID));
     response.end();
 });
 
 //Get all excellent students by year
 app.get('/studentyear/:year', function(request,response){
     var year = request.params.year;
-    response.send(college.getAllExcellentStudentsByYear(year));
+    response.send(college.getAllStudentsByYear(year));
     response.end();
 });
 

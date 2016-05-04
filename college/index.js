@@ -25,7 +25,7 @@ module.exports = class Grades {
         return ExcellentStudents;
     }
     
-    getExcellentStudentByID(ID) {
+    getStudentByID(ID) {
         console.log("======= Student By ID =======");
         var data = fileSystem.readFileSync(listOfStudentsJson);
         var idJson = JSON.parse(data), j;
@@ -40,12 +40,12 @@ module.exports = class Grades {
         return student;
     }
     
-    getAllExcellentStudentsByYear(year) {
-        console.log("======= Excellent Students in" +year+ "=======");
+    getAllStudentsByYear(year) {
+        console.log("======= All the Students in" +year+ "=======");
         var data = fileSystem.readFileSync(listOfStudentsJson);
         var yearStudents = JSON.parse(data), j;
         for(j=0; j < yearStudents.length; j++) {
-            if(yearStudents[j].Year != year || yearStudents[j].grade < ExcellentGrade) {
+            if(yearStudents[j].Year != year) {
                 yearStudents.splice(j--,1);
             }
         }
