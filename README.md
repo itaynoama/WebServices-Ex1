@@ -4,8 +4,8 @@
 
 ### The 3 functions :
 ###### getAllExcellentStudents
-###### getStudentByID(1)
-###### getAllStudentsByYear(2009)
+###### getStudentByID(id)
+###### getAllStudentsByYear(year)
 
 ### How to run it ?
 1. Clone the project to your desktop or just download the ZIP file.
