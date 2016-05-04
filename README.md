@@ -32,5 +32,8 @@
 {"studentName":"Israel Cohen","ID":1,"Year":"2015","grade":"80"}
 
 ### Obtaining Students By Year
-   * In order to obtain specific student by id you need to add the following link:      
+   * In order to obtain students by a certain year you need to add the following link:             
+  -> 'http://localhost:3000/studentyear/[year]'          
+  -> 'https://itaycollege.herokuapp.com/studentyear/[year]'         
+   * Change the [year] with one of this years - {2005, 2009, 2010, 2015, 2016}
 
