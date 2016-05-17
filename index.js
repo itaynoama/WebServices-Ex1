@@ -8,8 +8,8 @@ var College = require('./college');
 var port = process.env.PORT || 3000; //process is global var
 
 
-app.use(bodyParser.json()); //parsing application/json
-app.use(bodyParser.urlencoded({extended:true}));
+//app.use(bodyParser.json()); //parsing application/json
+//app.use(bodyParser.urlencoded({extended:true}));
 
 app.use('/assets', express.static(__dirname + 'public'));
 
@@ -29,23 +29,26 @@ app.all('*', function(request,response,next) {
 
 
 //Get all excellent students
-app.get('/allexcellentstudents', function(request,response){
-    response.send(college.getAllExcellentStudents());
-    response.end();
+app.get('/allexcellentstudents', function(request,response,value){
+    college.getAllExcellentStudents(function(data){
+      response.json(data);  
+    });
 });
 
 //Get specific student by ID
-app.get('/student/:ID', function(request,response){
+app.get('/student/:ID', function(request,response,value){
     var ID = request.params.ID;
-    response.send(college.getStudentByID(ID));
-    response.end();
+    college.getStudentByID(ID, function(data){
+      response.json(data);   
+    });
 });
 
 //Get all excellent students by year
-app.get('/studentyear/:year', function(request,response){
+app.get('/studentyear/:year', function(request,response,value){
     var year = request.params.year;
-    response.send(college.getAllStudentsByYear(year));
-    response.end();
+    college.getAllStudentsByYear(year, function(data){
+      response.json(data);   
+    });
 });
 
 
