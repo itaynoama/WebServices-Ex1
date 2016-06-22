@@ -7,11 +7,17 @@ var College = require('./college');
 
 var port = process.env.PORT || 3000; //process is global var
 
+app.use(function(req, res, next) {
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
+});
 
 //app.use(bodyParser.json()); //parsing application/json
 //app.use(bodyParser.urlencoded({extended:true}));
 
 app.use('/assets', express.static(__dirname + 'public'));
+
 
 //Manager - new College
 var college = new College();

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="grades">
+    <head>
+        <meta charset="UTF-8">
+        <title> App Grades </title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body ng-controller="appCtrl">
+        <div class="page-header center">
+			<h1>Shenkar Students Grades App</h1>
+		</div>
+       <div class="main-table panel">
+           <table class="table table-bordered table-hover" ng-init="allStudents()">
+               <thead>
+                   <tr>
+                       <th>Studet Name</th>
+                       <th>Studet ID</th>
+                       <th>Studet Year</th>
+                       <th>Studet Grade</th>
+                   </tr>
+               </thead>
+               <tbody>
+                       <tr class="paint-table" ng-repeat="students in getAllStudents">
+                           <td>{{students.studentName}}</td>
+                           <td>{{students.ID}}</td>
+                           <td>{{students.Year}}</td>
+                           <td>{{students.grade}}</td>
+                       </tr>
+               </tbody>
+           </table>
+       </div>
+       <script src="js/lib/angular/angular.min.js"></script>
+       <script src="js/appController.js"></script>
+    </body>
+</html>
