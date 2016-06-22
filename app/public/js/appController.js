@@ -9,8 +9,11 @@ appGrades.controller('appCtrl',function($scope,$http){
     $scope.getallStudents = function() {
          $http.get("https://itaycollege.herokuapp.com/allexcellentstudents").success(function(data) {
             $scope.students = data;
+         }).error(function(data, status, headers, config) {
+			alert('Error with the internet connection');
          });
     }
+
 
     //initialize the controller and display all the students
     $scope.init = function() {
@@ -22,6 +25,8 @@ appGrades.controller('appCtrl',function($scope,$http){
         $scope.id = "";
         $http.get("https://itaycollege.herokuapp.com/student/" + id).success(function(data) {
             $scope.students = data;
+        }).error(function(data, status, headers, config) {
+			alert("Can't find the id " + id);
         });
     }
 
@@ -31,6 +36,8 @@ appGrades.controller('appCtrl',function($scope,$http){
         $http.get("https://itaycollege.herokuapp.com/studentyear/" + year).success(function(data){
             console.log(data);
             $scope.students = data;
+        }).error(function(data, status, headers, config) {
+			alert('student not found in year' + year);
         });
     }
 

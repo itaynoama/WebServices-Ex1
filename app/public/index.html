@@ -15,10 +15,10 @@
             <table class="table table-striped">
                <thead>
                    <tr>
-                       <th>First Name</th>
-                       <th>Last Name</th>
-                       <th>Id</th>
-                       <th>Year</th>
+                       <th>Student Name</th>
+                       <th>Student ID</th>
+                       <th>Student Year</th>
+                       <th>Student grade</th>
                    </tr>
                </thead>
                <tbody ng-repeat="student in students">
@@ -36,7 +36,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" ng-model="id" placeholder="Search by ID">
                 <span class="input-group-btn">
-                <button class="btn btn-danger" ng-click="getStudentById(id)" type="button">Search</button>
+                <button class="btn btn-primary" ng-click="getStudentById(id)" type="button">Search by id</button>
                 </span>
             </div>
         </div>
@@ -44,7 +44,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" ng-model="year" placeholder="Search by Year">
                 <span class="input-group-btn">
-                <button class="btn btn-danger" ng-click="getStudentByYear(year)" type="button">Search</button>
+                <button class="btn btn-primary" ng-click="getStudentByYear(year)" type="button">Search by year</button>
                 </span>
             </div>
         </div>

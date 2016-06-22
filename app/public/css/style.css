@@ -1,11 +1,9 @@
 
 .table {
-	display: block;
     width: 580px;
 	display: table;
     margin: 0px auto;
-    text-align: center;
-
+    text-align: left;
 }
 
 .center{
@@ -13,3 +11,9 @@
 }
 
 
+@media (min-width: 1200px) {
+    .col-lg-6 {
+        width: 35%;
+        margin-left: 10%;
+    }
+}
