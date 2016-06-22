@@ -3,27 +3,35 @@ var appGrades = angular.module('grades', []);
 
 appGrades.controller('appCtrl',function($scope,$http){
 
+    $scope.studnets = [];
 
-    $scope.allStudents = function() {
-        $http.get("https://itaycollege.herokuapp.com/allexcellentstudents").success(function(data) {
-            $scope.getAllStudents = data;
-            document.getElementById('student').style.display = "none";
+    //get all students
+    $scope.getallStudents = function() {
+         $http.get("https://itaycollege.herokuapp.com/allexcellentstudents").success(function(data) {
+            $scope.students = data;
+         });
+    }
 
-        }).error(function(data,status,headers,config) {
-            alert('No Internet');
-        });
-    };
+    //initialize the controller and display all the students
+    $scope.init = function() {
+        $scope.getallStudents();
+    }
 
+    //get student by id
     $scope.getStudentById = function(id) {
+        $scope.id = "";
         $http.get("https://itaycollege.herokuapp.com/student/" + id).success(function(data) {
-            $scope.student = data;
-            document.getElementById('getAllStudents').style.display = "none";
-            document.getElementById('student').style.display = "block";
-        }).error(function(data,status,headers,config) {
-            alert("The id" + id + "is not exist");
+            $scope.students = data;
         });
-    };
+    }
 
-
+    //get student by year
+    $scope.getStudentByYear = function(year){
+        $scope.year = "";
+        $http.get("https://itaycollege.herokuapp.com/studentyear/" + year).success(function(data){
+            console.log(data);
+            $scope.students = data;
+        });
+    }
 
 });

@@ -7,77 +7,48 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
-    <body ng-controller="appCtrl">
+    <body ng-controller="appCtrl" ng-init="init()">
         <div class="page-header center">
 			<h1>Shenkar Students Grades App</h1>
 		</div>
-       <div class="main-table panel">
-           <table id="getAllStudents" class="table table-bordered table-hover" ng-init="allStudents()">
+        <div class="panel">
+            <table class="table table-striped">
                <thead>
                    <tr>
-                       <th>Studet Name</th>
-                       <th>Studet ID</th>
-                       <th>Studet Year</th>
-                       <th>Studet Grade</th>
+                       <th>First Name</th>
+                       <th>Last Name</th>
+                       <th>Id</th>
+                       <th>Year</th>
                    </tr>
                </thead>
-               <tbody>
-                       <tr class="paint-table" ng-repeat="students in getAllStudents">
-                           <td>{{students.studentName}}</td>
-                           <td>{{students.ID}}</td>
-                           <td>{{students.Year}}</td>
-                           <td>{{students.grade}}</td>
-                       </tr>
-               </tbody>
-           </table>
-           <table id="student" class="table table-bordered table-hover">
-               <thead>
+               <tbody ng-repeat="student in students">
                    <tr>
-                       <th>Studet Name</th>
-                       <th>Studet ID</th>
-                       <th>Studet Year</th>
-                       <th>Studet Grade</th>
+                       <td>{{student.studentName}}</td>
+                       <td>{{student.ID}}</td>
+                       <td>{{student.Year}}</td>
+                       <td>{{student.grade}}</td>
                    </tr>
-               </thead>
-               <tbody>
-                       <tr class="paint-table" ng-repeat="students in getAllStudents">
-                           <td>{{students.studentName}}</td>
-                           <td>{{students.ID}}</td>
-                           <td>{{students.Year}}</td>
-                           <td>{{students.grade}}</td>
-                       </tr>
                </tbody>
-           </table>
-           <div class="buttons">
-				<div row>
-					<div class="group-buttons col-lg-6">
-					    <div class="input-group">
-					      <span class="input-group-btn">
-					        <button class="btn btn-primary" ng-click="getStudentById(id)">Search Student By Id</button>
-					      </span>
-					      <input class="form-control" ng-model="id" placeholder="">
-					    </div>
-					 </div>
-					 <div class="group-buttons col-lg-6">
-					    <div class="input-group">
-					      <span class="input-group-btn">
-					        <button class="btn btn-primary" ng-click="getExcellenceStudent(excellenceYear)">Excellence Student By Year</button>
-					      </span>
-					      <input class="form-control" ng-model="excellenceYear" placeholder="2016">
-					    </div>
-					 </div>
-					 <div class="group-buttons col-lg-6">
-					    <div class="input-group">
-					      <span class="input-group-btn">
-					        <button class="btn btn-primary" ng-click="getWorstStudent(worstYear)">Worst Student By Year</button>
-					      </span>
-					      <input class="form-control" ng-model="worstYear" placeholder="2015">
-					    </div>
-					 </div>
-				</div>
-
-			</div>
-       </div>
+            </table>
+        </div>
+        <div class="row">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="id" placeholder="Search by ID">
+                <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="getStudentById(id)" type="button">Search</button>
+                </span>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="year" placeholder="Search by Year">
+                <span class="input-group-btn">
+                <button class="btn btn-danger" ng-click="getStudentByYear(year)" type="button">Search</button>
+                </span>
+            </div>
+        </div>
+        </div>
        <script src="js/lib/angular/angular.min.js"></script>
        <script src="js/appController.js"></script>
     </body>

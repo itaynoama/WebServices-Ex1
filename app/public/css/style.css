@@ -1,50 +1,15 @@
 
-#student{
-	display: none;
-}
-
-body{
-	 font-family: Arial, Helvetica, sans-serif;
-	margin: 0px auto;
-}
-
 .table {
 	display: block;
     width: 580px;
-	display:table;
+	display: table;
     margin: 0px auto;
     text-align: center;
 
-}
-
-.group-buttons{
-    width: 80%;
-    margin: 0px auto;
-    margin-top: 10px;
-}
-
-.main-table{
-	display: block;
-    width: 580px;
-	display:table;
-    margin: 0px auto;
-    text-align: center;
-    border: 2px solid #D8D8D8;
-    padding: 15px;
-}
-
-button{
-	width:200px;
 }
 
 .center{
 	text-align: center;
 }
 
-.buttons{
-	margin-top: 20px;
-}
 
-.paint-table{
-    background-color: #d9edf7;
-}
