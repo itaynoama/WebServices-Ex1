@@ -12,7 +12,7 @@
 			<h1>Shenkar Students Grades App</h1>
 		</div>
        <div class="main-table panel">
-           <table class="table table-bordered table-hover" ng-init="allStudents()">
+           <table id="getAllStudents" class="table table-bordered table-hover" ng-init="allStudents()">
                <thead>
                    <tr>
                        <th>Studet Name</th>
@@ -30,6 +30,53 @@
                        </tr>
                </tbody>
            </table>
+           <table id="student" class="table table-bordered table-hover">
+               <thead>
+                   <tr>
+                       <th>Studet Name</th>
+                       <th>Studet ID</th>
+                       <th>Studet Year</th>
+                       <th>Studet Grade</th>
+                   </tr>
+               </thead>
+               <tbody>
+                       <tr class="paint-table" ng-repeat="students in getAllStudents">
+                           <td>{{students.studentName}}</td>
+                           <td>{{students.ID}}</td>
+                           <td>{{students.Year}}</td>
+                           <td>{{students.grade}}</td>
+                       </tr>
+               </tbody>
+           </table>
+           <div class="buttons">
+				<div row>
+					<div class="group-buttons col-lg-6">
+					    <div class="input-group">
+					      <span class="input-group-btn">
+					        <button class="btn btn-primary" ng-click="getStudentById(id)">Search Student By Id</button>
+					      </span>
+					      <input class="form-control" ng-model="id" placeholder="">
+					    </div>
+					 </div>
+					 <div class="group-buttons col-lg-6">
+					    <div class="input-group">
+					      <span class="input-group-btn">
+					        <button class="btn btn-primary" ng-click="getExcellenceStudent(excellenceYear)">Excellence Student By Year</button>
+					      </span>
+					      <input class="form-control" ng-model="excellenceYear" placeholder="2016">
+					    </div>
+					 </div>
+					 <div class="group-buttons col-lg-6">
+					    <div class="input-group">
+					      <span class="input-group-btn">
+					        <button class="btn btn-primary" ng-click="getWorstStudent(worstYear)">Worst Student By Year</button>
+					      </span>
+					      <input class="form-control" ng-model="worstYear" placeholder="2015">
+					    </div>
+					 </div>
+				</div>
+
+			</div>
        </div>
        <script src="js/lib/angular/angular.min.js"></script>
        <script src="js/appController.js"></script>

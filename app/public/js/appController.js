@@ -14,6 +14,16 @@ appGrades.controller('appCtrl',function($scope,$http){
         });
     };
 
+    $scope.getStudentById = function(id) {
+        $http.get("https://itaycollege.herokuapp.com/student/" + id).success(function(data) {
+            $scope.student = data;
+            document.getElementById('getAllStudents').style.display = "none";
+            document.getElementById('student').style.display = "block";
+        }).error(function(data,status,headers,config) {
+            alert("The id" + id + "is not exist");
+        });
+    };
+
 
 
 });
